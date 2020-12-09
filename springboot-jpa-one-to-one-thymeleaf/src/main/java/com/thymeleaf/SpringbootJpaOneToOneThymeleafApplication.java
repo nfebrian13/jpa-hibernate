@@ -11,18 +11,16 @@ import com.thymeleaf.service.UserService;
 
 @SpringBootApplication
 public class SpringbootJpaOneToOneThymeleafApplication implements CommandLineRunner {
-
+	
 	@Autowired
 	private UserService userService;
-
+	
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootJpaOneToOneThymeleafApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-
-		/*
 		// create a user instance
 		Users user = new Users("John Doe", "john.doe@example.com", "1234abcd");
 
@@ -37,6 +35,6 @@ public class SpringbootJpaOneToOneThymeleafApplication implements CommandLineRun
 
 		// save the parent
 		// which will save the child (address) as well
-		userService.save(user); */
+		userService.save(user);
 	}
 }
