@@ -21,3 +21,8 @@ logging:
   level:
     com.nana: DEBUG
     org.springframework.security: DEBUG
+    
+    
+token:
+  expire:
+    days: 3    
