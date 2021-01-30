@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.registration.app.model.Member;
@@ -34,8 +35,7 @@ public class RegistrationController {
 	}
 
 	@PostMapping("/form")
-	public String formRegistrationProcess(@ModelAttribute @Valid Member m, BindingResult errors,
-			SessionStatus status) {
+	public String formRegistrationProcess(@ModelAttribute @Valid Member m, BindingResult errors, SessionStatus status) {
 		/**
 		 * don't return html because not double submit ModelAndView mv = new
 		 * ModelAndView("confirmation");
@@ -56,4 +56,14 @@ public class RegistrationController {
 
 	}
 
+	@GetMapping("/verify")
+	public String emailVerification(@RequestParam String token) {
+		registrationService.tokenVerification(token);
+		return "redirect:verified";
+	}
+
+	@GetMapping("/verified")
+	public void emailVerified() {
+
+	}
 }

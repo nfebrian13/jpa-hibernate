@@ -1,8 +1,16 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
+    <meta charset="UTF-8">
+    <title>Verifikasi Alamat Email</title>
 </head>
 <body>
-
+    <h1>Verifikasi Email</h1>
+    Halo {{nama}} ... <br>
+    Terima kasih telah mendaftar di aplikasi. <br>
+    <a href="http://localhost:9093/registration/verify?token=123-abc">
+        Klik link berikut untuk melakukan verifikasi
+    </a> <br>
+    Password anda adalah : <b>{{password}}</b>
 </body>
 </html>

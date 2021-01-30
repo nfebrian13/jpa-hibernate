@@ -6,4 +6,6 @@ import com.registration.app.model.EmailVerification;
 
 public interface EmailVerificationDao extends PagingAndSortingRepository<EmailVerification, String>{
 
+	EmailVerification findByToken(String token);
+
 }

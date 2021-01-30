@@ -14,6 +14,7 @@ import com.registration.app.model.EmailVerification;
 import com.registration.app.model.Member;
 
 @Service
+@Transactional
 public class RegistrationService {
 
 	@Value("${token.expire.days}")
@@ -25,7 +26,8 @@ public class RegistrationService {
 	@Autowired
 	private EmailVerificationDao emailVerificationDao;
 
-	@Transactional
+	/** move to the top, because every method is transactional **/
+//	@Transactional
 	public void registrationNewMember(Member m) {
 		EmailVerification ev = new EmailVerification();
 		ev.setMember(m);
@@ -34,5 +36,15 @@ public class RegistrationService {
 
 		memberDao.save(m);
 		emailVerificationDao.save(ev);
+	}
+
+//	@Transactional
+	public void tokenVerification(String token) {
+		EmailVerification v = emailVerificationDao.findByToken(token);
+		if (v != null) {
+			Member m = v.getMember();
+			m.setEmailVerification(true);
+			emailVerificationDao.delete(v);
+		}
 	}
 }
