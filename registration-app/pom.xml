@@ -19,6 +19,7 @@
 		<bootstrap.version>4.3.1</bootstrap.version>
 		<slf4j.version>1.7.25</slf4j.version>
 		<ultraq.version>2.5.2</ultraq.version>
+		<validation.version>2.0.1.Final</validation.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -64,6 +65,13 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>${validation.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
