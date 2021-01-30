@@ -22,7 +22,7 @@ public class Billing {
 	@Id
 	@Column(length = 36)
 	@GeneratedValue(generator = "uuid")
-	@GenericGenerator(strategy = "uuid", name = "uuid2")
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
 	private String id;
 
 	@NotNull
