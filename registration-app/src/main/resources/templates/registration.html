@@ -1,31 +1,34 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
 <head>
 <meta charset="UTF-8">
 <title>Registration</title>
 </head>
 <body>
-	<h1>Registration</h1>
-	Hallo :
-	<span th:text="${name}"> </span>
-	</br> Time is:
-	<span th:text="${time}"> </span>
-	</br>
+	<div layout:fragment="modal-content">
 
-	<form action="/registration" method="post">
-		<table>
-			<tr>
-				<td>Nama</td>
-				<td><input type="text"></td>
-			</tr>
-			<tr>
-				<td>Email</td>
-				<td><input type="text"></td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-				<td><input type="submit" value="Registration"></td>
-			</tr>
-		</table>
-	</form>
+
+		<h1>Registration</h1>
+		Hallo : <span th:text="${name}"> </span> </br> Time is: <span
+			th:text="${time}"> </span> </br>
+
+		<form action="/registration" method="post">
+			<table>
+				<tr>
+					<td>Nama</td>
+					<td><input type="text"></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><input type="text"></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td><input type="submit" value="Registration"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
 </body>
 </html>

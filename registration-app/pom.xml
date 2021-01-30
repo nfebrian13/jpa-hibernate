@@ -18,6 +18,7 @@
 		<java.version>1.8</java.version>
 		<bootstrap.version>4.3.1</bootstrap.version>
 		<slf4j.version>1.7.25</slf4j.version>
+		<ultraq.version>2.5.2</ultraq.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -53,7 +54,11 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>${slf4j.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>nz.net.ultraq.thymeleaf</groupId>
+			<artifactId>thymeleaf-layout-dialect</artifactId>
+			<version>${ultraq.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
