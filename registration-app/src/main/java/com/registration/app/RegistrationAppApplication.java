@@ -1,4 +1,4 @@
-package com.registration.app;
+ package com.registration.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
