@@ -2,6 +2,7 @@ package com.registration.app.model;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,6 +18,7 @@ import com.sun.istack.NotNull;
 public class EmailVerification {
 
 	@Id
+	@Column(length = 36)
 	@GeneratedValue(generator = "uuid")
 	@GenericGenerator(strategy = "uuid", name = "uuid2")
 	private String id;
@@ -26,6 +28,7 @@ public class EmailVerification {
 	@JoinColumn(name = "id_member")
 	private Member member;
 
+	@NotNull
 	@NotEmpty
 	private String token;
 

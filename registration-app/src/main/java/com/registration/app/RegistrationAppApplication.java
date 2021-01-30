@@ -13,6 +13,7 @@ public class RegistrationAppApplication {
 		SpringApplication.run(RegistrationAppApplication.class, args);
 	}
 
+	/** https://ultraq.github.io/thymeleaf-layout-dialect **/
 	@Bean
 	public LayoutDialect layoutDialect() {
 		return new LayoutDialect();
